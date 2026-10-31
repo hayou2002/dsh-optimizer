@@ -13,7 +13,7 @@
 
 `dsh-optimizer` 是 DSH 侧的治理 skill：把清理与整理做成可回滚的文件事务，管理治理根的项目、规则、技能、自动化、知识载体与工作目录，并严格保护 DSH 主目录中的认证与运行状态。
 
-DSH 适配的主要口径变化见 `CHANGELOG.md` 的 0.5.0 段，要点是：
+DSH 适配的主要口径变化见 `CHANGELOG.md` 的 0.1.0 段（DSH 适配首版），要点是：
 
 - `CODEX_HOME`/`~/.codex` → `DSH_HOME`/`~/.dsh`；规则文件 `.optimize/dsh-rules.json`。
 - 保护名单改为 DSH 真实状态面（凭据、会话、附件、存储、缓存、日志、profile、技能、集成、插件备份与运行数据库）。

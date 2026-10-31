@@ -1,8 +1,8 @@
 # Changelog
 
-## 0.5.0 - 2026-10-31
+## 0.1.0 - 2026-10-31
 
-DSH 适配版（`dsh-optimizer`），自 `codex-optimizer` 0.4.1 派生。
+首个 DSH 适配版本，自 `codex-optimizer` 0.4.1 派生。
 
 - 命名与路径迁移到 DSH：`$DSH_HOME` / `~/.dsh`、`.optimize/dsh-rules.json`、`dsh_optimizer.py`，并保留对旧 `codex-optimizer` 注入标记与旧保护名的迁移兼容。
 - 保护名单改为 DSH 真实状态面：`.credentials.yaml`、`.env`、`.anonymous-user-id`、`prompt-inject.md`、`workspace.json`、`sessions/`、`attachments/`、`storages/`、`cache/`、`logs/`、`profiles/`、`skills/`、`integrations/`、`channel-pack/`、`.plugin-backups/`、`.agent-presets/` 与运行数据库。
@@ -12,7 +12,12 @@ DSH 适配版（`dsh-optimizer`），自 `codex-optimizer` 0.4.1 派生。
 - 文档与示例统一为 bash（`$HOME/...`、`export PYTHONUTF8=1`），去掉 PowerShell 语法。
 - 参考章节按 DSH 现实校正，`references/04` 与 `references/05` 整体重写。
 
-## 0.4.1 - 2026-10-26
+## 上游 codex-optimizer 历史
+
+以下条目继承自上游 `codex-optimizer` 的 CHANGELOG，随本包一起保留，方便对照派生点（0.4.1）。
+DSH 侧版本号从 0.1.0 重新起算，与上游编号不连续。
+
+### 0.4.1 - 2026-10-26
 
 - Replace the fixed five-item environment check with action-scoped evidence.
 - Stop running a full read-only diagnostic after initialization.
@@ -20,7 +25,7 @@ DSH 适配版（`dsh-optimizer`），自 `codex-optimizer` 0.4.1 派生。
   used by the trash transaction.
 - Unify phase validation under one verification budget.
 
-## 0.4.0 - 2026-10-26
+### 0.4.0 - 2026-10-26
 
 - Add `organize-scan` for a single read-only inventory during `03`.
 - Make project documentation repair demand-driven instead of applying it to all
@@ -30,7 +35,7 @@ DSH 适配版（`dsh-optimizer`），自 `codex-optimizer` 0.4.1 派生。
 - Replace unconditional ten-step reference synchronization with targeted checks
   based on whether paths and project identity actually changed.
 
-## 0.3.0 - 2026-10-26
+### 0.3.0 - 2026-10-26
 
 - Add `archive-batch` for same-volume archival of legacy recovery batches that
   already carry manifests.
@@ -39,7 +44,7 @@ DSH 适配版（`dsh-optimizer`），自 `codex-optimizer` 0.4.1 派生。
 - Collapse repeated diagnostics, temporary helper compilation, transaction
   repair, and duplicate verification into one execution with one result check.
 
-## 0.2.0 - 2026-10-26
+### 0.2.0 - 2026-10-26
 
 - Add `quick-project` for explicit local and Git project adoption.
 - Keep the full plan, hash, and rollback transaction for destructive or risky operations.
@@ -48,7 +53,7 @@ DSH 适配版（`dsh-optimizer`），自 `codex-optimizer` 0.4.1 派生。
 - Use size and mtime validation for copies and staging; reserve SHA256 and extra backups for destructive, conflict, or release paths.
 - Correct collaboration and diagnostic CLI examples.
 
-## 0.1.0 - 2026-10-26
+### 0.1.0 - 2026-10-26
 
 - First Codex-native release.
 - Adds the initialization, optimize, tidy, and overview workflows.

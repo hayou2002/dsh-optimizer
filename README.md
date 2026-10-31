@@ -244,15 +244,19 @@ UTF-8 读取；直接运行上游脚本时请先设置 `PYTHONUTF8=1`。
 
 ## 更新与回滚
 
-从项目源更新：
+安装方式决定更新方式：
 
 ```bash
-Set-Location "$HOME/Desktop/OH-WorkSpace\projects\dsh-optimizer"
-git pull --ff-only
-python -m unittest discover -s tests -v
+# 方式一：仓库就在技能根，直接拉
+git -C "$HOME/.dsh/skills/dsh-optimizer" pull --ff-only
+
+# 方式二：代码在别处，拉完重新挂接目录联接
+git -C "D:/path/to/dsh-optimizer" pull --ff-only
 ```
 
-测试通过后重新执行“安装”中的复制步骤。计划、回收与回滚数据位于默认根的 `_temp/`。
+本包不自带测试目录；改动后按下面「发布包」重建，并用 `diagnose --json`、`organize-scan`、`apply`（不带 `--execute`）各跑一次确认行为未变。版本回退用 `git -C <repo> checkout <tag>` 再重新挂接。
+
+计划、回收与回滚数据位于默认根的 `_temp/`（`plans/`、`trash/`、`checkpoints/`）。
 
 ## 发布包
 
