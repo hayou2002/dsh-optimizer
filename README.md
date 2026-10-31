@@ -16,16 +16,25 @@
 
 ## 安装
 
-从源码安装：
+把这句话交给支持安装 Skill 的 Agent：
 
-```bash
-$source = "$HOME/Desktop/OH-WorkSpace\projects\dsh-optimizer"
-$target = Join-Path $env:USERPROFILE ".dsh\skills\dsh-optimizer"
-New-Item -ItemType Directory -Force -Path $target | Out-Null
-Copy-Item -Path (Join-Path $source "*") -Destination $target -Recurse -Force
+```text
+请帮我安装这个 Skill：运行 npx skills add hayou2002/dsh-optimizer
 ```
 
-DSH 会自动发现新 skill；如果界面尚未刷新，重启 DSH。
+或者自己动手，二选一：
+
+```bash
+# 方式一：直接克隆到技能根（推荐，之后 git pull 即可更新）
+git clone https://github.com/hayou2002/dsh-optimizer "$HOME/.dsh/skills/dsh-optimizer"
+```
+
+```bash
+# 方式二：代码在别处、用目录联接挂进来（Windows）
+cmd //c "mklink /J %USERPROFILE%\.dsh\skills\dsh-optimizer D:\path\to\dsh-optimizer"
+```
+
+整个目录就是 skill，必须保留 `SKILL.md` 及其相邻的 `references/`、`scripts/`、`config/`、`assets/`、`agents/`，不要只复制入口文件。DSH 每次加载重读 `SKILL.md`，改正文无需重启；目录变动会被监听，新 skill 即插即用。
 
 显式调用：
 
