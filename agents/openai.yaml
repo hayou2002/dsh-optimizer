@@ -1,0 +1,6 @@
+interface:
+  display_name: DSH 工作区优化
+  short_description: 整理 DSH 的项目、规则、技能、自动化、记忆与工作目录
+  default_prompt: Use $dsh-optimizer to inspect my DSH workspace and open the action menu.
+policy:
+  allow_implicit_invocation: true
